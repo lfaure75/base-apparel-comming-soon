@@ -1,0 +1,166 @@
+@import "../static/style/vars";
+
+$large-width : 1000px;
+
+.base-apparel {
+
+  min-height: 100vh;
+  background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+
+  @media only screen and (min-width: $large-width) {
+    display: grid;
+    grid-template-columns: 57.5% 42.5%;;
+    grid-template-rows: 30% 70%;
+    background-image: url(../static/images/bg-pattern-desktop.svg);
+    background-size: contain;
+  }
+
+  &__header {
+    padding: 2rem 0 0 10%;
+    height: 5rem;
+
+    @media only screen and (min-width: $large-width) {
+      padding: 4rem 0 0 20%;
+    }
+  }
+
+  &__logo {
+    margin: 0;
+  }
+
+  &__logo-img {
+    width: 6.25rem;
+
+    @media only screen and (min-width: $large-width) {
+      width: unset;
+    }
+  }
+
+  &__hero {
+    margin: 0;
+    background-position: top;
+    background-image: url(../static/images/hero-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover ;
+    height: 15.5rem;
+
+    @media only screen and (min-width: $large-width) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: span 2;
+
+      background-image: url(../static/images/hero-desktop.jpg);
+      background-position: center;
+      height: unset;
+    }
+  }
+
+  &__main {
+    margin-top: 4rem;
+    padding: 0 7% 2rem 7%;
+    text-align: center;
+
+    @media only screen and (min-width: $large-width) {
+      padding: 0 27% 0 20%;
+      text-align: left;
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    line-height: 1;
+    text-transform: uppercase;
+
+    @media only screen and (min-width: $large-width) {
+      margin: 0;
+      font-size: 4rem;
+      line-height: 1.15;
+    }
+
+    &-first {
+      color: $desaturated-red;
+      font-weight: 300;
+    }
+  }
+
+  &__announcement {
+    color: $desaturated-red;
+    line-height: 1.5;
+    font-size: 0.9rem;
+
+    @media only screen and (min-width: $large-width) {
+      font-size: 1rem;
+    }
+  }
+
+  &__form {
+    position: relative;
+    margin-top: 2rem;
+    text-align: left;
+  }
+
+  &__email {
+    border-width: thin;
+    border-color: lightgray;
+    border-style: solid;
+    border-radius: 2rem;
+
+    width:100%;
+    height: 3.5rem;
+    padding: 0 6rem 0 2rem;
+    font: inherit;
+    font-weight: 400;
+
+    @media only screen and (min-width: $large-width) {
+      padding-right: 7rem;
+    }
+
+    &--error {
+      background-image : url('../static/images/icon-error.svg');
+      background-repeat: no-repeat;
+      background-position-y: center;
+      background-position-x: calc(100% - 5rem);
+
+      border-color: $soft-red;
+      border-width: medium;
+
+      @media only screen and (min-width: $large-width) {
+        background-position-x: calc(100% - 7rem);
+      }
+    }
+  }
+
+  &__email::placeholder {
+    color: $soft-red;
+  }
+
+  &__err-msg {
+    padding-left: 2rem;
+    font-size: 0.8rem;
+    color: red;
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+
+  &__submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 3.5rem;
+    width: 5rem;
+    border-radius: 2rem;
+    border-width: 0;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+    @media only screen and (min-width: $large-width) {
+      width: 7rem;
+    }
+
+    &:hover {
+      cursor : pointer;
+      background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 80%, 86%));
+    }
+  }
+}
